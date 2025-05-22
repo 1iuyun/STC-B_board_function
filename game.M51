@@ -2,8 +2,8 @@ BL51 BANKED LINKER/LOCATER V6.22                                                
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-C:\KEIL\C51\BIN\BL51.EXE .\output\STARTUP.obj, .\output\main.obj, .\STCBSP_V3.4.LIB TO .\output\∂„±‹’œ∞≠ PRINT (.\∂„±‹’œ
->> ∞≠.m51) RAMSIZE (256)
+C:\KEIL\C51\BIN\BL51.EXE .\output\STARTUP.obj, .\output\main.obj, .\STCBSP_V3.4.LIB TO .\output\¬∂√£¬±√ú√ï√è¬∞¬≠ PRINT (.\¬∂√£¬±√ú√ï√è
+>> ¬∞¬≠.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -36,7 +36,7 @@ INPUT MODULES INCLUDED:
   C:\KEIL\C51\LIB\C51S.LIB (?C_IBP)
 
 
-LINK MAP OF MODULE:  .\output\∂„±‹’œ∞≠ (?C_STARTUP)
+LINK MAP OF MODULE:  .\output\¬∂√£¬±√ú√ï√è¬∞¬≠ (?C_STARTUP)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -131,7 +131,7 @@ LINK MAP OF MODULE:  .\output\∂„±‹’œ∞≠ (?C_STARTUP)
 
 
 
-OVERLAY MAP OF MODULE:   .\output\∂„±‹’œ∞≠ (?C_STARTUP)
+OVERLAY MAP OF MODULE:   .\output\¬∂√£¬±√ú√ï√è¬∞¬≠ (?C_STARTUP)
 
 
 SEGMENT                                   DATA_GROUP 
@@ -262,7 +262,7 @@ SEGMENT                                   DATA_GROUP
 
 
 
-SYMBOL TABLE OF MODULE:  .\output\∂„±‹’œ∞≠ (?C_STARTUP)
+SYMBOL TABLE OF MODULE:  .\output\¬∂√£¬±√ú√ï√è¬∞¬≠ (?C_STARTUP)
 
   VALUE           TYPE          NAME
   ----------------------------------
