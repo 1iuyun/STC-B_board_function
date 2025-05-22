@@ -1,0 +1,5 @@
+".\output\STARTUP.obj",
+".\output\main.obj",
+".\STCBSP_V3.4.LIB" 
+TO ".\output\∂„±‹’œ∞≠" 
+PRINT(".\list\∂„±‹’œ∞≠.m51") RAMSIZE(256) 
