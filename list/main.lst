@@ -1,0 +1,106 @@
+C51 COMPILER V9.51   MAIN                                                                  09/16/2021 14:52:53 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\output\main.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\list\main.lst) TABS(2) OBJECT(.\ou
+                    -tput\main.obj)
+
+line level    source
+
+   1          #include"main.H"
+   2          #include"MarioBM.C"
+   3          unsigned int last_record;
+   4          unsigned int setting,i;
+   5          unsigned char Music_tone,Music_PM;  // 音乐播放音调、节凑（每分钟节拍数）
+   6          unsigned char high;
+   7          unsigned char begin_sign,end_sign,restart_sign,count_sign,write_sign;
+   8          unsigned char new_record,score;
+   9          unsigned char record0,record1,record2,record3;
+  10          
+  11          code char barrier[]={0,1,0,0,2,0,0,1,0,2,0,0,1,0,0,2,0,0,
+  12                               1,0,0,0,1,0,0,0,2,2,0,0,2,0,0,1,0,1,
+  13                               0,0,0,2,0,0,1,0,0,1,0,0,2,0,2,0,0,1,
+  14                               0,0,2,0,0,1,0,2,0,0,1,0,0,2,0,1,0,2,
+  15                               0,0,0,1,0,1,0,2,0,1,0,0,2,0,0,1,0,0};
+  16          //#include"fun.c"
+  17          #include"func_test.C"
+  18          
+  19          
+  20          void my100mS_callback()                     //举例。100mS事件回调函数
+  21          { 
+  22   1        i++;
+  23   1        if(i>setting) i=0;
+  24   1        dealwithDisp(); 
+  25   1      }
+  26          
+  27          
+  28          void mykey_callback()                               // 按键（Key1、Key2）事件回调函数
+  29          { dealwithmykey();    
+  30   1      }
+  31          
+  32          
+  33          void main(){
+  34   1        
+  35   1        
+  36   1        Key_Init(); 
+  37   1        DisplayerInit();
+  38   1        BeepInit();
+  39   1        MusicPlayerInit();
+  40   1        
+  41   1        
+  42   1          SetEventCallBack(enumEventKey, mykey_callback);            //举例
+  43   1          //SetEventCallBack(enumEventSys1mS, my1mS_callback);         //举例
+  44   1          //SetEventCallBack(enumEventSys10mS, my10mS_callback);       //举例
+  45   1          SetEventCallBack(enumEventSys100mS, my100mS_callback); 
+  46   1        
+  47   1        
+  48   1          SetDisplayerArea(0,7);
+  49   1      
+  50   1      
+  51   1          Music_PM=90;//90
+  52   1          Music_tone=0xFC;
+  53   1          high=1;
+  54   1          begin_sign=0;
+C51 COMPILER V9.51   MAIN                                                                  09/16/2021 14:52:53 PAGE 2   
+
+  55   1          end_sign=0;
+  56   1          restart_sign=1;
+  57   1          count_sign=0;
+  58   1          write_sign=0;
+  59   1          setting=2000;
+  60   1          score=0;
+  61   1          new_record=0;
+  62   1          
+  63   1          record0 = M24C02_Read(0x77);
+  64   1          record1 = M24C02_Read(0x78);
+  65   1          record2 = M24C02_Read(0x79);
+  66   1          record3 = M24C02_Read(0x80);
+  67   1          last_record = (record3<<24) | (record2<<16) | (record1<<8)  | record0 ;
+  68   1          MySTC_Init();
+  69   1        while(1)
+  70   1        { MySTC_OS();
+  71   2          
+  72   2          mykey_callback();
+  73   2          
+  74   2          
+  75   2          if(begin_sign==1)
+  76   2          {
+  77   3          my100mS_callback();
+  78   3          } 
+  79   2        }
+  80   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    903    ----
+   CONSTANT SIZE    =    314    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     21      30
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
